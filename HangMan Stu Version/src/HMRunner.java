@@ -14,7 +14,7 @@ public class HMRunner {
     
     public static void main(String[] args) {
         HangMan m = new HangMan();
-        System.out.println(Logic.guessWord("adsf", "ASDF"));
+        System.out.println(Logic.guessWord("adsf", "ADSF"));
     }
     
 }

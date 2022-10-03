@@ -63,8 +63,7 @@ public class Logic {
      * @return
      */
     public static boolean guessWord(String word, String guess) {
-    	String guessedword = guess.toLowerCase();
-        if(word.equals(guessedword)) {
+        if(word.equalsIgnoreCase(guess)) {
         	return true; 
         }else {
     		return false; 	

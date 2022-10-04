@@ -14,7 +14,8 @@ public class HMRunner {
     
     public static void main(String[] args) {
         HangMan m = new HangMan();
-        System.out.println(Logic.guessLetter("asdf", "asdf", "A"));
+        System.out.println(Logic.withoutSpaces("a s d f"
+        		));
     }
     
 }

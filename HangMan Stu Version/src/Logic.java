@@ -122,11 +122,26 @@ public class Logic {
      */
     public static String encrypt(String word, String curr, String guess) {
         String result = "";
-       
+        	if(letterCheck(curr, "_") == true && letterCheck(curr, guess) == false) {
+        		int length = 1; 
+        		int location = 0; 
+        		while(length <= word.length()) {
+        			if(curr.substring(length - 1, length).equals("_")) {
+        				location = length; 
+        				length++;
+        				if(word.substring(location - 1, location).equalsIgnoreCase(guess)) {
+        					result += curr.substring(0, location - 1) + guess.toLowerCase() + curr.substring(location);
+        				}
+        			}else {
+        				length++; 
+        			}
+        		}
+        	}
         return result;
     }
     
     /**
+     * 
      * Return a version of the given string without spacing
      * You may assume that each character is followed immediately by a 
      * white space
@@ -135,9 +150,21 @@ public class Logic {
      * @param str the string to be transformed
      * @return version of the string without spaces as shown above
      */
+    // pseudo code 
+    // use substring to check for spaces
+    // for each space, add the letter behind it to final result
     public static String withoutSpaces(String str){
-        String result = "";
-       
+    	String result = "";
+    	result += str.substring(0, 1);
+    	int length  = 1; 
+    	while (length <= str.length()) {
+    		if(str.substring(length - 1, length).equals(" ")) {
+    			result += str.substring(length, length + 1); 
+    			length++; 
+    		}else {
+    			length++; 
+    		}
+    	}
         return result;
     }
     

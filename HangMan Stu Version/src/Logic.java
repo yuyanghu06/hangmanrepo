@@ -39,7 +39,7 @@ public class Logic {
     	int charnum = 1;
     	int strikes = 0;
     	while(charnum <= list.length()) {
-    		if(list.substring(charnum - 1, charnum).equals(guess)) {
+    		if(list.substring(charnum - 1, charnum).equalsIgnoreCase(guess)) {
     			charnum++;
     			strikes+=1;
     		}
@@ -69,7 +69,24 @@ public class Logic {
     		return false; 	
         }
     }
-    
+    //check to see if any of the letters in the string equal each other
+    public static boolean letterCheck(String word, String guess) {
+    	int charnum = 1;
+    	int strikes = 0;
+    	while(charnum <= word.length()) {
+    		if(word.substring(charnum - 1, charnum).equalsIgnoreCase(guess)) {
+    			charnum++;
+    			strikes+=1;
+    		}
+    		charnum++; 
+ 
+    	}
+    	if(strikes > 0) {
+    		return true; 
+    	}else{
+    		return false; 
+    	}
+    }
     /**
      * A method used to figure out if a player's guess is successful or not.
      * A guess is successful if the letter has not already been guessed and is 
@@ -83,10 +100,12 @@ public class Logic {
      * @return true or false
      */
     public static boolean guessLetter(String word, String curr, String guess){
-        
-        return false;
+    	if(letterCheck(curr, guess) == true) {
+    		return false; 
+    	}else {
+    		return true; 
+    	}
     }
-
     /**
      * The word shown to a player for Hang-Man must be coded such that only the
      * correctly guessed letters are visible to the player. The rest of the

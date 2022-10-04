@@ -177,7 +177,11 @@ public class Logic {
      */
     public static String withSpaces(String str){
         String result = "";
-       
+        int length = 1;
+        while (length <= str.length()) {
+        	result += str.substring(length - 1, length) + " ";
+        	length++; 
+        }
         return result;
     }
 
@@ -200,7 +204,11 @@ public class Logic {
      */
     public static String reset(String word) {
         String result = "";
-       
+        int length = 1; 
+        while(length <= word.length()) {
+        	result += "_";
+        	length++; 
+        }
         return result;
     }
 }

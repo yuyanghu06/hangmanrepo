@@ -14,8 +14,7 @@ public class HMRunner {
     
     public static void main(String[] args) {
         HangMan m = new HangMan();
-        System.out.println(Logic.withoutSpaces("a s d f"
-        		));
+        System.out.println(Logic.reset("asdf"));
     }
     
 }
